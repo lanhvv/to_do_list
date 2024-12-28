@@ -1,0 +1,30 @@
+<div #container class="note-card-container">
+    <div class="note-card-content" [routerLink]="['../','update']">
+        <h1 class="note-card-title">{{title}}</h1>
+
+        <div #bodyText class="note-card-body">
+            <p>{{body}}</p>
+            <div #truncator class="fade-out-truncation"></div>
+        </div>
+    </div>
+
+    <div class="x-button" data-bs-toggle="modal" data-bs-target="#noteModal"><i class="bi bi-x"></i></div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="noteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Confirm</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+           You want to delete note?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success">Confirm</button>
+        </div>
+      </div>
+    </div>
+</div>

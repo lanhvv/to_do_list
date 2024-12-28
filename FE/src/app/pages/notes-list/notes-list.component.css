@@ -1,0 +1,45 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 500px;
+    margin: auto;
+    padding-top: 50px;
+
+    position: relative;
+}
+
+.main-container > .add-new-task {
+    position: fixed;
+    bottom: 0;
+
+    width: 500px;
+    height: 40px;
+    background-color: var(--purple);
+    border-radius: 4px;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-new-task:hover {
+    --purple: #9d90d6;
+    background-color: var(--purple);
+}
+
+.add-new-task:active {
+    --purple: #9284d4;
+    background-color: var(--purple);
+}
+
+
+.notes-list {
+    margin-top: 35px;
+}
+
+app-note-card {
+    display: block;
+    margin-bottom: 25px;
+}

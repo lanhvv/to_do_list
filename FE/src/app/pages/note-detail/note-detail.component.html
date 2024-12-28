@@ -1,0 +1,21 @@
+<div class="note-detail-container">
+    <form [formGroup]="formNote">
+        <div class="field-note">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" formControlName="title" class="form-control" id="title">
+            <div *ngIf="get('title')?.invalid && (get('title')?.dirty || get('title')?.touched)">
+                <div *ngIf="get('title')?.errors?.['required']" class="content-validate text-danger">*Title is required</div>
+                <div *ngIf="get('title')?.errors?.['maxLenght']" class="content-validate text-danger">*Max lenght is 100</div>
+            </div>
+        </div>
+        <div class="field-note">
+            <label for="body" class="form-label">Body</label>
+            <textarea formControlName="body" class="form-control" id="body" rows="3"></textarea>
+        </div>
+        <div class="button-note float-end">
+            <button type="button" class="btn btn-link text-black" [routerLink]="['../','list']">Cancel</button>
+            <button type="button" class="btn btn-success" [disabled] = "formNote.invalid">Save</button>
+        </div>
+    </form>
+</div>
+
